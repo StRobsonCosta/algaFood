@@ -5760,3 +5760,15 @@ This warning can be switched off on the Team > Git > Confirmations and Warnings 
 
 !ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2020-08-27 16:47:54.260
 !MESSAGE Field value processing of @ConfigurationProperty meta-data is not supported
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-08-27 23:05:39.360
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.iqyJpjRR
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-08-27 23:05:39.363
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.iqyJpjRR
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-08-27 23:05:39.365
+!MESSAGE subsribers = {}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-08-27 23:05:39.367
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.iqyJpjRR => OK
