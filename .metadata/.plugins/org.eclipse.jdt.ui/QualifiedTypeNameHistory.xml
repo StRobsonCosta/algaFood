@@ -1,18 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="org.springframework.stereotype.Controller"/>
-    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ResponseBody"/>
-    <fullyQualifiedTypeName name="com.algaworks.di.service.AtivacaoClienteService"/>
-    <fullyQualifiedTypeName name="com.algaworks.di.modelo.Produto"/>
-    <fullyQualifiedTypeName name="com.algaworks.di.modelo.Cliente"/>
-    <fullyQualifiedTypeName name="java.lang.Override"/>
-    <fullyQualifiedTypeName name="com.algaworks.di.notificacao.NotificadorEmail"/>
-    <fullyQualifiedTypeName name="com.algaworks.di.notificacao.Notificador"/>
-    <fullyQualifiedTypeName name="com.algaworks.di.notificacao.NotificadorSMS"/>
-    <fullyQualifiedTypeName name="com.algaworks.algafood.di.notificacao.NotificadorEmail"/>
-    <fullyQualifiedTypeName name="org.springframework.context.annotation.Bean"/>
-    <fullyQualifiedTypeName name="com.algaworks.algafood.di.service.AtivacaoClienteService"/>
-    <fullyQualifiedTypeName name="org.springframework.context.annotation.Configuration"/>
     <fullyQualifiedTypeName name="com.sun.tools.javac.util.List"/>
     <fullyQualifiedTypeName name="org.springframework.context.annotation.Primary"/>
     <fullyQualifiedTypeName name="java.lang.annotation.Retention"/>
@@ -39,7 +26,6 @@
     <fullyQualifiedTypeName name="com.algaworks.algafood.infrastructure.repository.CozinhaRepositoryImpl"/>
     <fullyQualifiedTypeName name="lombok.Getter"/>
     <fullyQualifiedTypeName name="lombok.Setter"/>
-    <fullyQualifiedTypeName name="lombok.Data"/>
     <fullyQualifiedTypeName name="lombok.EqualsAndHashCode"/>
     <fullyQualifiedTypeName name="lombok.EqualsAndHashCode.Include"/>
     <fullyQualifiedTypeName name="com.algaworks.algafood.domain.model.Restaurante"/>
@@ -47,17 +33,31 @@
     <fullyQualifiedTypeName name="javax.persistence.EntityManager"/>
     <fullyQualifiedTypeName name="javax.persistence.PersistenceContext"/>
     <fullyQualifiedTypeName name="org.springframework.transaction.annotation.Transactional"/>
-    <fullyQualifiedTypeName name="com.algaworks.algafood.domain.repository.CozinhaRepository"/>
     <fullyQualifiedTypeName name="org.springframework.stereotype.Component"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RestController"/>
-    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMapping"/>
     <fullyQualifiedTypeName name="com.algaworks.algafood.domain.repository.EstadoRepository"/>
     <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="com.algaworks.algafood.domain.model.Estado"/>
     <fullyQualifiedTypeName name="java.awt.PageAttributes.MediaType"/>
-    <fullyQualifiedTypeName name="org.springframework.http.MediaType"/>
-    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PathVariable"/>
-    <fullyQualifiedTypeName name="com.algaworks.algafood.domain.model.Cozinha"/>
+    <fullyQualifiedTypeName name="com.fasterxml.jackson.annotation.JsonRootName"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="lombok.Data"/>
+    <fullyQualifiedTypeName name="lombok.NonNull"/>
+    <fullyQualifiedTypeName name="com.algaworks.algafood.api.model.CozinhasXmlWrapper"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.GetMapping"/>
+    <fullyQualifiedTypeName name="org.springframework.http.MediaType"/>
+    <fullyQualifiedTypeName name="com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement"/>
+    <fullyQualifiedTypeName name="com.fasterxml.jackson.annotation.JsonProperty"/>
+    <fullyQualifiedTypeName name="com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper"/>
+    <fullyQualifiedTypeName name="com.algaworks.algafood.domain.model.Cozinha"/>
+    <fullyQualifiedTypeName name="org.springframework.http.HttpStatus"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMapping"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ResponseStatus"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PostMapping"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PutMapping"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PathVariable"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestBody"/>
+    <fullyQualifiedTypeName name="com.algaworks.algafood.domain.repository.CozinhaRepository"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.BeanUtils"/>
+    <fullyQualifiedTypeName name="org.springframework.http.ResponseEntity"/>
 </qualifiedTypeNameHistroy>
