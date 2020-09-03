@@ -43,7 +43,7 @@ public class CozinhaController {
 		
 	}
 	
-	@GetMapping(produces = MediaType.APPLICATION_XML_VALUE)       // método deletado no curso... só pra ser visto em XML no Postman
+	@GetMapping(produces = MediaType.APPLICATION_XML_VALUE)
 	public CozinhasXmlWrapper listarXml(){
 		return new CozinhasXmlWrapper(cozinhaRepository.listar());
 	}
@@ -91,7 +91,7 @@ public class CozinhaController {
 			//cozinhaAtual.setNome(cozinha.getNome());
 			BeanUtils.copyProperties(cozinha, cozinhaAtual, "id");
 			
-			cozinhaAtual = cadastroCozinha.salvar(cozinhaAtual);
+			cozinhaAtual = cozinhaRepository.salvar(cozinhaAtual);
 			return ResponseEntity.ok(cozinhaAtual);
 		}
 		

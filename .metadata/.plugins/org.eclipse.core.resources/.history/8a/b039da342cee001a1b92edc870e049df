@@ -43,7 +43,7 @@ public class CozinhaController {
 		
 	}
 	
-	@GetMapping(produces = MediaType.APPLICATION_XML_VALUE)       // método deletado no curso... só pra ser visto em XML no Postman
+	@GetMapping(produces = MediaType.APPLICATION_XML_VALUE)
 	public CozinhasXmlWrapper listarXml(){
 		return new CozinhasXmlWrapper(cozinhaRepository.listar());
 	}
