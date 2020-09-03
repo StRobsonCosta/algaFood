@@ -6624,3 +6624,15 @@ Binding(CTRL+R,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.debug.ui.console,,,system)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-09-03 20:27:39.719
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.ihcQFncP
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-09-03 20:27:39.722
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.ihcQFncP
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-09-03 20:27:39.725
+!MESSAGE subsribers = {}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-09-03 20:27:39.727
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.ihcQFncP => OK
