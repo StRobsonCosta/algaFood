@@ -106,14 +106,13 @@ public class CozinhaController {
 			return ResponseEntity.noContent().build();
 			
 		}catch(EntidadeNaoEncontradaException e) {
-			return ResponseEntity.notFound().build();
-		
+			return ResponseEntity.status(HttpStatus.NOT_FOUND);
+		}
 		}catch(EntidadeEmUsoException e) {
 			return ResponseEntity.status(HttpStatus.CONFLICT).build();
 		}
 		
-		/*Antes ...
-		 * Cozinha cozinha = cozinhaRepository.buscar(cozinhaId);
+		/*Cozinha cozinha = cozinhaRepository.buscar(cozinhaId);
 		  try {
 			if (cozinha != null) {
 				cozinhaRepository.remover(cozinha);
@@ -124,7 +123,7 @@ public class CozinhaController {
 			
 		}catch (DataIntegrityViolationException e) {
 			return ResponseEntity.status(HttpStatus.CONFLICT).build();
-		}*/
+		}
+	}*/
 
-	}
 }
