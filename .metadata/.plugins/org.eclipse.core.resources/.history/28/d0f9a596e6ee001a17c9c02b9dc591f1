@@ -44,16 +44,16 @@ public class RestauranteController {
 		return ResponseEntity.notFound().build();
 	}
 	
-	@PostMapping	
-	public ResponseEntity<?>  adicionar (@RequestBody Restaurante restaurante) {
+	@PostMapping
+	@ResponseStatus(HttpStatus.CREATED)
+	public ResponseEntity<Restaurante>  adicionar (@RequestBody Restaurante restaurante) {
 		try {
 			restaurante = cadastroRestaurante.salvar(restaurante);
 			
 			return ResponseEntity.status(HttpStatus.CREATED)
 					.body(restaurante);
 		} catch (EntidadeNaoEncontradaException e) {
-			return ResponseEntity.badRequest()
-					.body(e.getMessage());
+			return ResponseEntity.badRequest().body(restaurante);
 			
 		}
 		
