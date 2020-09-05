@@ -6997,3 +6997,15 @@ java.lang.RuntimeException
 
 !ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2020-09-04 21:12:19.687
 !MESSAGE Field value processing of @ConfigurationProperty meta-data is not supported
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-09-04 23:37:31.529
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.oGUFfEyL
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-09-04 23:37:31.537
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.oGUFfEyL
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-09-04 23:37:31.545
+!MESSAGE subsribers = {}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-09-04 23:37:31.551
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.oGUFfEyL => OK
