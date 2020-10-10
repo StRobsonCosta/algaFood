@@ -1,4 +1,4 @@
-package com.algaworks.algafood.jpa;
+/*package com.algaworks.algafood.jpa;
 
 import java.util.List;
 
@@ -26,3 +26,4 @@ public class ConsultaCidadeMain {
 	}
 
 }
+*/

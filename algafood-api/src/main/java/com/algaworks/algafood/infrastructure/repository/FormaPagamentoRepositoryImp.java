@@ -1,4 +1,4 @@
-package com.algaworks.algafood.infrastructure.repository;
+/*package com.algaworks.algafood.infrastructure.repository;
 
 import java.util.List;
 
@@ -42,3 +42,4 @@ public class FormaPagamentoRepositoryImp implements FormaPagamentoRepository{
 	}
 
 }
+*/
