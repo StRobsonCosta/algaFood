@@ -65,10 +65,10 @@ public class RestauranteController {
 	@PostMapping
 	public ResponseEntity<?>  adicionar (@RequestBody Restaurante restaurante) {
 		  try {
-			Restaurante restauranteAtual = cadastroRestaurante.salvar(restaurante);
+			    restaurante = cadastroRestaurante.salvar(restaurante);
 			
 			return ResponseEntity.status(HttpStatus.CREATED)
-					.body(restauranteAtual);
+					.body(restaurante);
 		} catch (EntidadeNaoEncontradaException e) {
 			return ResponseEntity.badRequest()
 					.body(e.getMessage());
@@ -77,7 +77,7 @@ public class RestauranteController {
 		
 	}
 	
-	@PutMapping ("/{restauranteId}")
+	/*@PutMapping ("/{restauranteId}")
 	public ResponseEntity<?> atualizar(@PathVariable Long restauranteId, @RequestBody Restaurante restaurante){
 
 		try {
@@ -96,10 +96,33 @@ public class RestauranteController {
 					.body(e.getMessage());
 		}		
 		
+	}*/
+	@PutMapping("/{restauranteId}")
+	public ResponseEntity<?> atualizar(@PathVariable Long restauranteId,
+			@RequestBody Restaurante restaurante) {
+		try {
+			Restaurante restauranteAtual = restauranteRepository
+					.findById(restauranteId).orElse(null);
+			
+			if (restauranteAtual != null) {
+				BeanUtils.copyProperties(restaurante, restauranteAtual, 
+						"id", "formasPagamento", "endereco", "dataCadastro", "produtos");
+				
+				restauranteAtual = cadastroRestaurante.salvar(restauranteAtual);
+				return ResponseEntity.ok(restauranteAtual);
+			}
+			
+			return ResponseEntity.notFound().build();
+		
+		} catch (EntidadeNaoEncontradaException e) {
+			return ResponseEntity.badRequest()
+					.body(e.getMessage());
+		}
 	}
+
 	
 	
-	 	@DeleteMapping("/{restauranteId}")
+	 	/*@DeleteMapping("/{restauranteId}")
 	    public ResponseEntity<Restaurante> remover (@PathVariable Long restauranteId){
 		
 		try {
@@ -113,7 +136,7 @@ public class RestauranteController {
 			return ResponseEntity.status(HttpStatus.CONFLICT).build();
 		}
 	 
-	 }
+	 }*/
 	 	@PatchMapping("/{restauranteId}")
 	 	public ResponseEntity<?>atualizarParcial(@PathVariable Long restauranteId,
 	 			@RequestBody Map<String, Object> campos){
