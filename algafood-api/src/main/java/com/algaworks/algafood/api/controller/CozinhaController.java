@@ -51,31 +51,37 @@ public class CozinhaController {
 	
 
 	
-	//public Cozinha buscar (@PathVariable Long cozinhaId) {    //outra forma possivel(@PathVariable ("cozinhaId") Long id) {
-		//return cozinhaRepository.buscar(cozinhaId);
 	@GetMapping("/{cozinhaId}")
-	public  ResponseEntity<Cozinha> buscar (@PathVariable Long cozinhaId){
-		Optional<Cozinha> cozinha = cozinhaRepository.findById(cozinhaId);
-		
-		if (cozinha.isPresent()) {
-			return ResponseEntity.ok(cozinha.get());
-		}
-		
-		return ResponseEntity.notFound().build(); //return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-		
-		/*** Outras opções para Status:
-		 * 		return ResponseEntity.status(HttpStatus.OK).body(cozinha); //ou: return ResponseEntity.ok(cozinha);
-		 * ou:
-		 *      HttpHeaders headers = new HttpHeaders();
-		 *      headers.add(HttpHeaders.LOCATION, "http://api.algafood.local:8080/cozinhas");
-		 *      
-		 *      return ResponseEntity
-		 *      .status(HttpStatus.FOUND)
-		 *      .headers(headers)
-		 *      .build(); 
-		 */
-				
+	public Cozinha buscar (@PathVariable Long cozinhaId) {
+		return cadastroCozinha.buscarOuFalhar(cozinhaId);
 	}
+	
+//	@GetMapping("/{cozinhaId}")
+//	public  ResponseEntity<Cozinha> buscar (@PathVariable Long cozinhaId){
+//		Optional<Cozinha> cozinha = cozinhaRepository.findById(cozinhaId);
+//		
+//		if (cozinha.isPresent()) {
+//			return ResponseEntity.ok(cozinha.get());
+//		}
+//		
+//		return ResponseEntity.notFound().build(); //return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+//		
+//		/*** Outras opções para Status:
+//		 * 		return ResponseEntity.status(HttpStatus.OK).body(cozinha); //ou: return ResponseEntity.ok(cozinha);
+//		 * ou:
+//		 *      HttpHeaders headers = new HttpHeaders();
+//		 *      headers.add(HttpHeaders.LOCATION, "http://api.algafood.local:8080/cozinhas");
+//		 *      
+//		 *      return ResponseEntity
+//		 *      .status(HttpStatus.FOUND)
+//		 *      .headers(headers)
+//		 *      .build(); 
+//		 * ou:     
+//		 * 		public Cozinha buscar (@PathVariable Long cozinhaId) {    //outra forma possivel(@PathVariable ("cozinhaId") Long id) {
+//		 *			return cozinhaRepository.buscar(cozinhaId);
+//		 */
+//				
+//	}
 	
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
@@ -85,49 +91,66 @@ public class CozinhaController {
 	}
 	
 	@PutMapping("/{cozinhaId}")
-	public ResponseEntity<Cozinha> atualizar (@PathVariable Long cozinhaId,
+	public Cozinha atualizar (@PathVariable Long cozinhaId,
 			@RequestBody Cozinha cozinha){
-		Optional<Cozinha> cozinhaAtual = cozinhaRepository.findById(cozinhaId);
+		Cozinha cozinhaAtual = cadastroCozinha.buscarOuFalhar(cozinhaId);
 		
-		if(cozinhaAtual.isPresent()) {
-			//cozinhaAtual.setNome(cozinha.getNome());
-			BeanUtils.copyProperties(cozinha, cozinhaAtual.get(), "id");
-			
-			Cozinha cozinhaSalva = cadastroCozinha.salvar(cozinhaAtual.get());
-			return ResponseEntity.ok(cozinhaSalva);
-		}
+		BeanUtils.copyProperties(cozinha, cozinhaAtual, "id");
 		
-		return ResponseEntity.notFound().build();
+		return cadastroCozinha.salvar(cozinhaAtual);
 	}
 	
+//	@PutMapping("/{cozinhaId}")
+//	public ResponseEntity<Cozinha> atualizar (@PathVariable Long cozinhaId,
+//			@RequestBody Cozinha cozinha){
+//		Optional<Cozinha> cozinhaAtual = cozinhaRepository.findById(cozinhaId);
+//		
+//		if(cozinhaAtual.isPresent()) {
+//			//cozinhaAtual.setNome(cozinha.getNome());
+//			BeanUtils.copyProperties(cozinha, cozinhaAtual.get(), "id");
+//			
+//			Cozinha cozinhaSalva = cadastroCozinha.salvar(cozinhaAtual.get());
+//			return ResponseEntity.ok(cozinhaSalva);
+//		}
+//		
+//		return ResponseEntity.notFound().build();
+//	}
+	
 	@DeleteMapping("/{cozinhaId}")
-	public ResponseEntity<?> remover (@PathVariable Long cozinhaId){
-		
-		try {
-			cadastroCozinha.excluir(cozinhaId);
-			return ResponseEntity.noContent().build();
-			
-		}catch(EntidadeNaoEncontradaException e) {
-			return ResponseEntity.notFound().build();
-		
-		}catch(EntidadeEmUsoException e) {
-			return ResponseEntity.status(HttpStatus.CONFLICT)
-					.body(e.getMessage());
-		}
-		
-		/*Antes ...
-		 * Cozinha cozinha = cozinhaRepository.buscar(cozinhaId);
-		  try {
-			if (cozinha != null) {
-				cozinhaRepository.remover(cozinha);
-				return ResponseEntity.noContent().build();
-				
-			}
-			return ResponseEntity.notFound().build();
-			
-		}catch (DataIntegrityViolationException e) {
-			return ResponseEntity.status(HttpStatus.CONFLICT).build();
-		}*/
-
+	@ResponseStatus(HttpStatus.NO_CONTENT)
+	public void remover(@PathVariable Long cozinhaId) {
+		cadastroCozinha.excluir(cozinhaId);
 	}
+	
+//	@DeleteMapping("/{cozinhaId}")
+//	public ResponseEntity<?> remover (@PathVariable Long cozinhaId){
+//		
+//		try {
+//			cadastroCozinha.excluir(cozinhaId);
+//			return ResponseEntity.noContent().build();
+//			
+//		}catch(EntidadeNaoEncontradaException e) {
+//			return ResponseEntity.notFound().build();
+//		
+//		}catch(EntidadeEmUsoException e) {
+//			return ResponseEntity.status(HttpStatus.CONFLICT)
+//					.body(e.getMessage());
+//		}
+//		
+//		/*Antes ...
+//		 * Cozinha cozinha = cozinhaRepository.buscar(cozinhaId);
+//		  try {
+//			if (cozinha != null) {
+//				cozinhaRepository.remover(cozinha);
+//				return ResponseEntity.noContent().build();
+//				
+//			}
+//			return ResponseEntity.notFound().build();
+//			
+//		}catch (DataIntegrityViolationException e) {
+//			return ResponseEntity.status(HttpStatus.CONFLICT).build();
+//		}*/
+//
+//	}
+	
 }
